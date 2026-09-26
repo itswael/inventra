@@ -31,13 +31,23 @@ class AnalyticsViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(AnalyticsUiState())
     val uiState: StateFlow<AnalyticsUiState> = _uiState.asStateFlow()
 
+    private val _selectedTab = MutableStateFlow(0)
+    val selectedTab: StateFlow<Int> = _selectedTab.asStateFlow()
+
     init { loadData(AnalyticsPeriod.WEEK) }
 
     fun onPeriodChanged(period: AnalyticsPeriod) = loadData(period)
 
+    fun onTabSelected(tab: Int) { _selectedTab.value = tab }
+
     private fun loadData(period: AnalyticsPeriod) {
         viewModelScope.launch {
-            _uiState.value = _uiState.value.copy(isLoading = true, period = period)
+            // Only show spinner on first load; subsequent refreshes update silently
+            val firstLoad = _uiState.value.productSummaries.isEmpty() && _uiState.value.isLoading
+            _uiState.value = _uiState.value.copy(
+                isLoading = firstLoad,
+                period = period
+            )
             val (start, end) = periodRange(period)
             val summary = repository.getAnalyticsSummary(start, end)
             val products = repository.getProductSalesSummary(start, end)

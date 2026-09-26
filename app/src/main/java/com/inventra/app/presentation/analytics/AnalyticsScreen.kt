@@ -26,9 +26,6 @@ import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -51,7 +48,7 @@ import com.inventra.app.ui.theme.ProfitGreenLight
 @Composable
 fun AnalyticsScreen(viewModel: AnalyticsViewModel = hiltViewModel()) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
-    var selectedTab by remember { mutableIntStateOf(0) }
+    val selectedTab by viewModel.selectedTab.collectAsStateWithLifecycle()
 
     Scaffold(contentWindowInsets = WindowInsets(0)) { innerPadding ->
         Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
@@ -78,7 +75,7 @@ fun AnalyticsScreen(viewModel: AnalyticsViewModel = hiltViewModel()) {
             // Tab row
             ScrollableTabRow(selectedTabIndex = selectedTab, edgePadding = 16.dp) {
                 listOf("Overview", "Products", "Trends").forEachIndexed { index, title ->
-                    Tab(selected = selectedTab == index, onClick = { selectedTab = index },
+                    Tab(selected = selectedTab == index, onClick = { viewModel.onTabSelected(index) },
                         text = { Text(title) })
                 }
             }
