@@ -5,11 +5,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -30,9 +32,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -48,7 +47,6 @@ import com.inventra.app.ui.components.formatCurrency
 import com.inventra.app.ui.components.formatQty
 import com.inventra.app.ui.components.stockDotColor
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductsScreen(
     onAddProduct: () -> Unit,
@@ -66,12 +64,7 @@ fun ProductsScreen(
     else products
 
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("Products", fontWeight = FontWeight.Bold) },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.surface)
-            )
-        },
+        contentWindowInsets = WindowInsets(0),
         floatingActionButton = {
             FloatingActionButton(onClick = onAddProduct, containerColor = MaterialTheme.colorScheme.primary) {
                 Icon(Icons.Filled.Add, "Add Product", tint = MaterialTheme.colorScheme.onPrimary)
@@ -79,6 +72,13 @@ fun ProductsScreen(
         }
     ) { innerPadding ->
         Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
+            // Inline title
+            Text(
+                "Products",
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.statusBarsPadding().padding(horizontal = 16.dp, vertical = 8.dp)
+            )
             // Search bar
             OutlinedTextField(
                 value = searchQuery,
