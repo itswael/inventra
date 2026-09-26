@@ -4,13 +4,12 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+    <!-- Up arrow (stock in) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M54,28 L68,42 L62,42 L62,68 L46,68 L46,42 L40,42 Z" />
-    <rect
+        android:pathData="M54,24 L72,48 L62,48 L62,72 L46,72 L46,48 L36,48 Z" />
+    <!-- Base bar -->
+    <path
         android:fillColor="#FFFFFF"
-        android:width="40"
-        android:height="6"
-        android:x="34"
-        android:y="72" />
+        android:pathData="M32,78 L76,78 L76,84 L32,84 Z" />
 </vector>

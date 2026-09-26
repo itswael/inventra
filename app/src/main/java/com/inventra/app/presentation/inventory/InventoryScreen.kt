@@ -85,13 +85,13 @@ fun InventoryScreen(viewModel: InventoryViewModel = hiltViewModel()) {
 
         LazyColumn(
             modifier = Modifier.fillMaxSize().padding(innerPadding),
-            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 12.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             // Title
             item {
                 Text("Inventory", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold,
-                    modifier = Modifier.statusBarsPadding().padding(bottom = 4.dp))
+                    modifier = Modifier.statusBarsPadding().padding(top = 8.dp, bottom = 4.dp))
             }
             // Summary strip
             item {

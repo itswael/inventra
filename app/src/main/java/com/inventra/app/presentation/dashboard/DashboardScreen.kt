@@ -107,7 +107,7 @@ fun DashboardScreen(
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier.fillMaxSize().padding(innerPadding),
-            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 12.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // Inline header — sits tight below status bar
@@ -116,7 +116,7 @@ fun DashboardScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .statusBarsPadding()
-                        .padding(bottom = 4.dp)
+                        .padding(top = 8.dp, bottom = 4.dp)
                 ) {
                     Text(
                         "Inventra",
