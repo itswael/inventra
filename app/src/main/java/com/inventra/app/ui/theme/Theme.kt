@@ -8,46 +8,47 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val LightColorScheme = lightColorScheme(
-    primary = Teal40,
+    primary = Amber40,
     onPrimary = Neutral99,
-    primaryContainer = Teal90,
-    onPrimaryContainer = Teal10,
-    secondary = Amber40,
+    primaryContainer = Amber90,
+    onPrimaryContainer = Amber10,
+    secondary = Slate40,
     onSecondary = Neutral99,
-    secondaryContainer = Amber90,
-    onSecondaryContainer = Amber10,
+    secondaryContainer = Slate90,
+    onSecondaryContainer = Slate10,
     surface = SurfaceLight,
     onSurface = Neutral10,
-    surfaceVariant = Neutral95,
-    onSurfaceVariant = Neutral30,
+    surfaceVariant = Color(0xFFF0DFC1),
+    onSurfaceVariant = Color(0xFF504537),
     background = SurfaceLight,
     onBackground = Neutral10,
-    outline = Neutral40,
+    outline = Color(0xFF837060),
     outlineVariant = Neutral80,
     error = LossRed,
     onError = Neutral99
 )
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Teal80,
-    onPrimary = Teal20,
-    primaryContainer = TealContainer,
-    onPrimaryContainer = OnTealContainer,
-    secondary = Amber80,
-    onSecondary = Amber20,
-    secondaryContainer = Amber30,
-    onSecondaryContainer = Amber90,
+    primary = Amber80,
+    onPrimary = Amber20,
+    primaryContainer = Amber30,
+    onPrimaryContainer = Amber90,
+    secondary = Slate80,
+    onSecondary = Slate20,
+    secondaryContainer = Slate30,
+    onSecondaryContainer = Slate90,
     surface = SurfaceDark,
     onSurface = Neutral90,
-    surfaceVariant = Neutral20,
-    onSurfaceVariant = Neutral80,
+    surfaceVariant = Color(0xFF504537),
+    onSurfaceVariant = Color(0xFFD3C4AD),
     background = SurfaceDark,
     onBackground = Neutral90,
-    outline = Neutral80,
-    outlineVariant = Neutral30,
+    outline = Color(0xFF9D8E7A),
+    outlineVariant = Color(0xFF504537),
     error = LossRedLight,
     onError = Neutral99
 )
@@ -55,7 +56,7 @@ private val DarkColorScheme = darkColorScheme(
 @Composable
 fun InventraTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {

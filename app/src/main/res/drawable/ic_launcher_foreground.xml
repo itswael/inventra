@@ -4,12 +4,30 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Up arrow (stock in) -->
+
+    <!-- Upward arrow (growth / stock in) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M54,24 L72,48 L62,48 L62,72 L46,72 L46,48 L36,48 Z" />
-    <!-- Base bar -->
+        android:pathData="M54,16 L40,30 L48,30 L48,42 L60,42 L60,30 L68,30 Z" />
+
+    <!-- Box left top flap -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M32,78 L76,78 L76,84 L32,84 Z" />
+        android:pathData="M22,56 L40,46 L54,46 L54,56 Z" />
+
+    <!-- Box right top flap -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,56 L54,46 L68,46 L86,56 Z" />
+
+    <!-- Box body left half (gap at center creates a visual seam) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M22,56 L22,86 L52,86 L52,56 Z" />
+
+    <!-- Box body right half -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M56,56 L56,86 L86,86 L86,56 Z" />
+
 </vector>

@@ -2,33 +2,31 @@ package com.inventra.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Primary — Deep Teal
-val Teal10 = Color(0xFF002019)
-val Teal20 = Color(0xFF003829)
-val Teal30 = Color(0xFF005140)
-val Teal40 = Color(0xFF006B55)
-val Teal80 = Color(0xFF5CDBBF)
-val Teal90 = Color(0xFF79F8DA)
-val TealContainer = Color(0xFF00513F)
-val OnTealContainer = Color(0xFF79F8DA)
+// Primary — Warm Amber
+val Amber10 = Color(0xFF2D1600)
+val Amber20 = Color(0xFF4C2700)
+val Amber30 = Color(0xFF6B3A00)
+val Amber40 = Color(0xFF8C5000)
+val Amber80 = Color(0xFFFFB951)
+val Amber90 = Color(0xFFFFDDB4)
 
-// Secondary — Warm Amber
-val Amber10 = Color(0xFF2A1700)
-val Amber20 = Color(0xFF462C00)
-val Amber30 = Color(0xFF634300)
-val Amber40 = Color(0xFF835B00)
-val Amber80 = Color(0xFFFABD37)
-val Amber90 = Color(0xFFFFDC7F)
+// Secondary — Warm Slate
+val Slate10 = Color(0xFF261900)
+val Slate20 = Color(0xFF3E2E16)
+val Slate30 = Color(0xFF57452B)
+val Slate40 = Color(0xFF70573C)
+val Slate80 = Color(0xFFDEC0A2)
+val Slate90 = Color(0xFFFAE0BB)
 
-// Neutral
-val Neutral10 = Color(0xFF191C1B)
-val Neutral20 = Color(0xFF2D3130)
-val Neutral30 = Color(0xFF444847)
-val Neutral40 = Color(0xFF5C5F5E)
-val Neutral80 = Color(0xFFC4C7C6)
-val Neutral90 = Color(0xFFE0E3E2)
-val Neutral95 = Color(0xFFEFF1F0)
-val Neutral99 = Color(0xFFF5FAF8)
+// Neutral — Warm
+val Neutral10 = Color(0xFF201A13)
+val Neutral20 = Color(0xFF35302A)
+val Neutral30 = Color(0xFF4D4640)
+val Neutral40 = Color(0xFF655D57)
+val Neutral80 = Color(0xFFCFC8C3)
+val Neutral90 = Color(0xFFEBE4DF)
+val Neutral95 = Color(0xFFF9F2EC)
+val Neutral99 = Color(0xFFFFF8F5)
 
 // Semantic
 val ProfitGreen = Color(0xFF1B6B3A)
@@ -38,6 +36,6 @@ val LossRedLight = Color(0xFFEF5350)
 val WarningYellow = Color(0xFFF59E0B)
 val InfoBlue = Color(0xFF0288D1)
 
-// Surface variants
-val SurfaceLight = Color(0xFFF5FAF8)
-val SurfaceDark = Color(0xFF191C1B)
+// Surface
+val SurfaceLight = Color(0xFFFFF8F5)
+val SurfaceDark = Color(0xFF17120A)
