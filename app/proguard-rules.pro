@@ -1,0 +1,3 @@
+-keep class com.inventra.app.data.local.entity.** { *; }
+-keep class com.inventra.app.domain.model.** { *; }
+-keepattributes *Annotation*
